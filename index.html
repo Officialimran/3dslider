@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>3D coverflow slideshow</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -21,9 +21,15 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="swiper-content">
-                            <img src="img/1.jpg" />
+                            <img src="img/2.jpg" />
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <img src="img/3.jpg" />
+                        </div>
+                    </div>
+                    
                     <div class="swiper-slide">
                         <div class="swiper-content">
                             <img src="img/1.jpg" />
@@ -31,9 +37,20 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="swiper-content">
-                            <img src="img/1.jpg" />
+                            <img src="img/2.jpg" />
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <img src="img/2.jpg" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <img src="img/3.jpg" />
+                        </div>
+                    </div>
+                    
                     <div class="swiper-slide">
                         <div class="swiper-content">
                             <img src="img/1.jpg" />
@@ -41,7 +58,12 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="swiper-content">
-                            <img src="img/1.jpg" />
+                            <img src="img/2.jpg" />
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-content">
+                            <img src="img/3.jpg" />
                         </div>
                     </div>
                 </div>
@@ -104,14 +126,25 @@
             },
 
             breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 10
+                },
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
                 560: {
-                    slidesPerView: 2.5
+                    slidesPerView: 2.5,
+                    spaceBetween: 20
                 },
                 786: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
+                    spaceBetween: 30
                 },
                 1024: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
+                    spaceBetween: 40
                 }
             }
         });

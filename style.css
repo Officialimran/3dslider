@@ -11,7 +11,7 @@ body{
 
 section{
     position: relative;
-    width:calc(min(47rem, 90%));
+    width:calc(min(60rem, 90%));
     margin: 0 auto;
     min-height: 100vh;
     column-gap: 3rem;
@@ -25,14 +25,14 @@ section{
 
 .swiper-container{
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 .swiper{
     width: 100%;
-    /*padding: 60px 0 95px 0;*/
-    
-    max-width: 100%;
-    overflow: hidden;
+    padding: 60px 0 95px 0;
+
 }
 
 .swiper-slide{
