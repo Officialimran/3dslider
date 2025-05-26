@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D coverflow slideshow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     
+    <h2>
+        <a href="indexv1.html" 
+            class="bg-blue-600 px-4 py-2 rounded-lg text-red-500 shadow-[0_4px_12px_rgb(255,0,0)] hover:shadow-[0_6px_16px_rgb(255,0,0)] transition-shadow duration-300">
+            3D Slider Full Responsive
+        </a>
+    </h2>
+
     <section>
         <div class="swiper-container">
             <div class="swiper">
@@ -85,19 +93,19 @@
 
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script type="text/javascript">
+    <script>
         var swiper = new Swiper(".swiper", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: "auto", // OK if slides have fixed width
             loop: true,
+            slidesPerView: "auto", // critical for coverflow
 
             coverflowEffect: {
-                rotate: 0,
+                rotate: 30,
                 stretch: 0,
-                depth: 100,
-                modifier: 4,
+                depth: 200,
+                modifier: 1, // prevents big gaps
                 slideShadows: false
             },
 
@@ -115,40 +123,10 @@
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev"
-            },
-
-            keyboard: {
-                enabled: true
-            },
-
-            mousewheel: {
-                thresholdDelta: 70
-            },
-
-            breakpoints: {
-                0: {
-                    slidesPerView: 1.2,
-                    spaceBetween: 10
-                },
-                320: {
-                    slidesPerView: 2,
-                    spaceBetween: 10
-                },
-                560: {
-                    slidesPerView: 2.5,
-                    spaceBetween: 20
-                },
-                786: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 40
-                }
             }
         });
-    </script>
+        </script>
+
 
 
 </body>
