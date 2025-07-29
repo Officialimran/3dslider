@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiper 3D Coverflow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+</head>
+<body class="bg-gray-50">
+
+<div class="w-full max-w-7xl mx-auto px-4 py-8">
+  <h2 class="font-montserrat font-bold text-[30px] md:text-[48px] leading-[70px] text-center text-[#4D4D4D]">
+    Latest Collection
+  </h2>
+
+  <div class="relative pb-16">
+    <!-- Swiper Container -->
+    <div class="swiper product-slider-coverflow !py-5">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide !w-[300px] md:!w-[450px] !h-[358px] md:!h-[534px]">
+          <img src="https://picsum.photos/450/534?random=1" alt="Tile 1" class="w-full h-full object-cover rounded-lg" />
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide !w-[300px] md:!w-[450px] !h-[358px] md:!h-[534px]">
+          <img src="https://picsum.photos/450/534?random=2" alt="Tile 2" class="w-full h-full object-cover rounded-lg" />
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide !w-[300px] md:!w-[450px] !h-[358px] md:!h-[534px]">
+          <img src="https://picsum.photos/450/534?random=3" alt="Tile 3" class="w-full h-full object-cover rounded-lg" />
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide !w-[300px] md:!w-[450px] !h-[358px] md:!h-[534px]">
+          <img src="https://picsum.photos/450/534?random=4" alt="Tile 4" class="w-full h-full object-cover rounded-lg" />
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide !w-[300px] md:!w-[450px] !h-[358px] md:!h-[534px]">
+          <img src="https://picsum.photos/450/534?random=5" alt="Tile 5" class="w-full h-full object-cover rounded-lg" />
+        </div>
+        <!-- Slide 6 -->
+        <div class="swiper-slide !w-[300px] md:!w-[450px] !h-[358px] md:!h-[534px]">
+          <img src="https://picsum.photos/450/534?random=6" alt="Tile 6" class="w-full h-full object-cover rounded-lg" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Navigation & Counter -->
+    <div class="absolute -bottom-[0px] left-1/2 -translate-x-1/2 flex gap-10 z-50 items-center">
+      <!-- Prev Button -->
+      <button class="swiper-button-prev-custom">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.8651 29.1458L18.3772 23.5847C17.4072 22.7533 17.4072 21.2526 18.3772 20.4212L24.8651 14.8601"
+            stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round"></path>
+          <circle cx="22.2955" cy="22" r="20.8333" stroke="#2F2F2F" stroke-width="1.5"></circle>
+        </svg>
+      </button>
+
+      <!-- Counter -->
+      <div class="flex items-center justify-center text-[#797979] font-medium font-montserrat min-w-[100px]">
+        <div class="flex items-start space-x-1">
+          <span class="current-slide text-xl text-[#1C75BC] !text-[46px]">01</span>
+          <span class="text-lg">/</span>
+          <span class="total-slides text-[14px] text-[#797979]">06</span>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button class="swiper-button-next-custom">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.7257 29.1458L26.2136 23.5847C27.1837 22.7533 27.1837 21.2526 26.2136 20.4212L19.7257 14.8601"
+            stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round"></path>
+          <circle cx="20.8333" cy="20.8333" r="20.8333" transform="matrix(1 0 0 -1 1.46204 42.8333)"
+            stroke="#2F2F2F" stroke-width="1.5"></circle>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".product-slider-coverflow", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 250,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+    on: {
+      slideChange: function () {
+        document.querySelector(".current-slide").textContent = String(this.realIndex + 1).padStart(2, "0");
+      },
+    },
+  });
+
+  // Set total slides
+  document.querySelector(".total-slides").textContent = String(swiper.slides.length - swiper.loopedSlides * 2).padStart(2, "0");
+</script>
+</body>
+</html>
